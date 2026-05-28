@@ -23,7 +23,8 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
 - [ ] Tener una imagen de marca coherente con el grupo.  
 - [x] Modificar los patrones de cabecera y pie de página.  
-- [ ] Utilizando el plugin "**Genesis Custom Blocks**" crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado. Este bloque lo instalaremos en Nuestros servicios.
+- [ ] Instalar **Genesis Custom Blocks**
+- [ ] Crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado en la página "nuestros servicios".
 - [ ] Documentar todos los pasos dados y crear un vídeo explicativo
 
 # Documentación:
