@@ -1,3 +1,9 @@
+Para trabajar en el proyecto ir a
+> http://localhost:8080/wp-login
+y acceder con las credenciales:
+- Usuario: PHP_QuadCore
+- Contraseña: PHP_QuadCore_wp
+
 Para generar el contenedor:
 > docker compose up
 
