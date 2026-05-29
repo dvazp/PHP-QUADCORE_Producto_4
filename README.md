@@ -18,7 +18,7 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [x] Crear un tema de bloques "en blanco" con el plugin "**Create Block Theme**".
 - [x] Home
 - [ ] Nuestros servicios
-- [ ] Nuestra flota
+- [x] Nuestra flota
 - [ ] Una sección de noticias (blog) con 3 noticias
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
 - [x] Tener una imagen de marca coherente con el grupo.  
