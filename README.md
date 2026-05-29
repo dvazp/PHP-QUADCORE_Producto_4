@@ -23,7 +23,7 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
 - [x] Tener una imagen de marca coherente con el grupo.  
 - [x] Modificar los patrones de cabecera y pie de página.  
-- [ ] Utilizando el plugin "**Genesis Custom Blocks**" crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado. Este bloque lo instalaremos en Nuestros servicios.
+- [x] Utilizando el plugin "**Genesis Custom Blocks**" crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado. Este bloque lo instalaremos en Nuestros servicios.
 - [ ] Documentar todos los pasos dados y crear un vídeo explicativo
 
 # Documentación:
@@ -121,4 +121,20 @@ Volver atrás al menú de Patrones y hacer clic en **Pie de página** > Editar:
 1. Instalar el plugin: Ir a Plugins > Añadir nuevo y buscar "Genesis Custom Blocks".
 2. Acceder a la herramienta: Una vez activado, en el menú lateral aparecerá una nueva sección llamada **Custom Blocks**
 3. Se puede crear un bloque nuevo haciendo click en “add new”.
-4. 
+4. En la nueva pantalla accederemos a **builder** en el menú superior. En editor fields añadiremos un campo con _slug_ “bloque-zonas”.
+5. Guardaremos e iremos a **Front-end Preview**. Ahí nos saltará una información sobre que falta añadir código en un directorio bajo `wp-content`.
+     - El directorio concreto es `wp-content/themes/temareparaya/blocks/block-bloque-zonas.php`
+6. Accederemos al directorio en los archivos locales y crearemos un archivo nuevo con el nombre anteriormente indicado.
+7. En este archivo haremos la llamada a la api:
+    >$url\_del\_json \= 'https://fp064.techlab.uoc.edu/~uocx8/producto3/public/index.php/api/servicios/zonas';
+    
+    Añadiremos también una función que ordene los resultados:
+   >if ( $resultado && isset( $resultado\['ok'\] ) && $resultado\['ok'\] \=== true ) {
+        usort( $resultado\['data'\], function( $a, $b ) {
+                return $b\['total\_servicios'\] <=> $a\['total\_servicios'\];
+        });
+   }
+
+    Para terminar, el código encargado de mostrar los resultados. El código completo se puede encontrar en el repositorio de github:
+   [Ir al código](https://github.com/dvazp/PHP-QUADCORE_Producto_4/blob/main/wp-content/themes/temareparaya/blocks/block-bloque-zonas.php)
+8. Para terminar, iremos a la página `Nuestros servicios` e insertaremos un bloque nuevo, ese bloque será el que acabamos de crear.
