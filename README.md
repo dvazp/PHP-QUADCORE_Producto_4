@@ -13,11 +13,10 @@ Para importar la BBDD:
 
 Al acabar de desarrollar, para exportar la BBDD:
 > docker exec -i wp_db mariadb-dump -u wp_usuario -pPHP_QuadCore_wp wordpress_db > copia_bbdd.sql
-
 # Lista de tareas:
 - [x] Crear un tema de bloques "en blanco" con el plugin "**Create Block Theme**".
 - [x] Home
-- [ ] Nuestros servicios
+- [x] Nuestros servicios
 - [x] Nuestra flota
 - [ ] Una sección de noticias (blog) con 3 noticias
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
@@ -25,7 +24,6 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [x] Modificar los patrones de cabecera y pie de página.  
 - [x] Utilizando el plugin "**Genesis Custom Blocks**" crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado. Este bloque lo instalaremos en Nuestros servicios.
 - [ ] Documentar todos los pasos dados y crear un vídeo explicativo
-
 # Documentación:
 ## Crear un nuevo proyecto de WP
 Crear un docker-compose.yml que descargue la imagen de WP:
@@ -66,7 +64,6 @@ Al crearse activar el contenedor y acceder a
 >localhost:8080/wp-admin
 
 Indicar ahí las credenciales de acceso que se van a usar y el idioma con el que se va a trabajar
-   
 ## Creación del tema en blanco
 1. Instalar el plugin: Ir a Plugins > Añadir nuevo y buscar "Create Block Theme".
 2. Acceder a la herramienta: Una vez activado, ir a Apariencia > Create Block Theme.
@@ -75,7 +72,6 @@ Indicar ahí las credenciales de acceso que se van a usar y el idioma con el que
     - Theme Name: Reparaya.
     - Description: "Tema reparaya”.
 5. Darle a "Generate": El plugin descargará un archivo .zip o instalará directamente el tema.
-
 ## Crear plantilla
 1. Entrar al panel de WordPress (localhost:8080/wp-admin).
 2. Ir a **Apariencia > Editor** (esto abrirá el editor de sitio completo).
@@ -84,20 +80,11 @@ Indicar ahí las credenciales de acceso que se van a usar y el idioma con el que
 5. Seleccionar **Página de inicio** (Front Page).
 6. Elegir página en blanco y añadir bloque “contenido”.
 7. Repetir desde el punto 4, eligiendo **Página**.
-
-## Crear página home
-1. Entrar al panel de WordPress (localhost:8080/wp-admin).
-2. Ir a **Apariencia > Editor** (esto abrirá el editor de sitio completo).
-3. En el menú de la izquierda, hacer clic en **Páginas**.
-4. Arriba a la derecha, hacer click en **Añadir nueva página**.
-5. Introducir el nombre (ReparaYa).
-6. Editar al gusto.
-7. Pulsar en **Publicar** en la esquina superior derecha.
-8. Volver al apartado de **Páginas** en el editor.
-9. Darle a los 3 puntitos en la tarjeta de la página y elegir **Establecer como página de inicio**.
-
-Para crear el resto de páginas se sigue el mismo proceso desde el punto 1 al 7.
-
+## Decisiones de imagen
+Para ReparaYa hemos decidido proyectar una imagen amistosa y relajada. Esto lo conseguiremos con tonalidades de azul, que además traen a la mente el agua limpia.
+- Para los fondos usaremos \#bccad1
+- Para el contraste usaremos \#1e3653
+- En caso necesario, como en el texto del botón, se permitirá usar blanco y negro puro, ya que son colores que combinan correctamente y en prácticamente todas las situaciones permiten una lectura correcta.
 ## Modificar cabecera y pie de página
 ### Paso 1: Localizar la Cabecera y el Pie de página
 1.  Ir al panel de WordPress y entrar en **Apariencia > Editor**.
@@ -116,8 +103,19 @@ Volver atrás al menú de Patrones y hacer clic en **Pie de página** > Editar:
 2.  Añadir un bloque de **Grupo** o **Fila** para mantenerlo ordenado.
 3.  Meter un bloque de **Párrafo** con el copyright del grupo, por ejemplo: “© 2026 ReparaYa - PHP_QuadCore. Todos los derechos reservados.”
 4.  **Guardar**.
+## Crear página home
+1. Entrar al panel de WordPress (localhost:8080/wp-admin).
+2. Ir a **Apariencia > Editor** (esto abrirá el editor de sitio completo).
+3. En el menú de la izquierda, hacer clic en **Páginas**.
+4. Arriba a la derecha, hacer click en **Añadir nueva página**.
+5. Introducir el nombre (ReparaYa).
+6. Editar al gusto.
+7. Pulsar en **Publicar** en la esquina superior derecha.
+8. Volver al apartado de **Páginas** en el editor.
+9. Darle a los 3 puntitos en la tarjeta de la página y elegir **Establecer como página de inicio**.
 
-## Creación del _custom block_
+Para crear el resto de páginas se sigue el mismo proceso desde el punto 1 al 7.
+## Creación del _custom block_ y nuestros servicios
 1. Instalar el plugin: Ir a Plugins > Añadir nuevo y buscar "Genesis Custom Blocks".
 2. Acceder a la herramienta: Una vez activado, en el menú lateral aparecerá una nueva sección llamada **Custom Blocks**
 3. Se puede crear un bloque nuevo haciendo click en “add new”.
@@ -138,3 +136,4 @@ Volver atrás al menú de Patrones y hacer clic en **Pie de página** > Editar:
     Para terminar, el código encargado de mostrar los resultados. El código completo se puede encontrar en el repositorio de github:
    [Ir al código](https://github.com/dvazp/PHP-QUADCORE_Producto_4/blob/main/wp-content/themes/temareparaya/blocks/block-bloque-zonas.php)
 8. Para terminar, iremos a la página `Nuestros servicios` e insertaremos un bloque nuevo, ese bloque será el que acabamos de crear.
+9. Ya que estamos en `Nuestros servicios` aprovechamos para poner la cabecera y el pie de página, un título y algún texto para complementar.
