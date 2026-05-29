@@ -21,10 +21,9 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [ ] Nuestra flota
 - [ ] Una sección de noticias (blog) con 3 noticias
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
-- [ ] Tener una imagen de marca coherente con el grupo.  
+- [x] Tener una imagen de marca coherente con el grupo.  
 - [x] Modificar los patrones de cabecera y pie de página.  
-- [ ] Instalar **Genesis Custom Blocks**
-- [ ] Crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado en la página "nuestros servicios".
+- [ ] Utilizando el plugin "**Genesis Custom Blocks**" crear un bloque personalizado de código PHP que lea el listado JSON generado en el producto 3 y muestre por pantalla el resultado. Este bloque lo instalaremos en Nuestros servicios.
 - [ ] Documentar todos los pasos dados y crear un vídeo explicativo
 
 # Documentación:
@@ -69,7 +68,7 @@ Al crearse activar el contenedor y acceder a
 Indicar ahí las credenciales de acceso que se van a usar y el idioma con el que se va a trabajar
    
 ## Creación del tema en blanco
-1. Instalar el plugin: Ir a Plugins > Añadir nuevo y busca "Create Block Theme" (es oficial de WordPress.org).
+1. Instalar el plugin: Ir a Plugins > Añadir nuevo y buscar "Create Block Theme".
 2. Acceder a la herramienta: Una vez activado, ir a Apariencia > Create Block Theme.
 3. Elegir la opción: Verás varias opciones. Marcar la que dice "Create blank theme" (Crear tema en blanco).
 4. Rellenar los datos:
@@ -115,5 +114,11 @@ Para que no dé problemas de maquetación, editaremos la **Vista de Lista** (el 
 Volver atrás al menú de Patrones y hacer clic en **Pie de página** > Editar:
 1.  Limpiar lo que venga por defecto.
 2.  Añadir un bloque de **Grupo** o **Fila** para mantenerlo ordenado.
-3.  Meter un bloque de **Párrafo** con el copyright del grupo, por ejemplo: `© 2026 ReparaYa - PHP_QuadCore. Todos los derechos reservados.`
+3.  Meter un bloque de **Párrafo** con el copyright del grupo, por ejemplo: “© 2026 ReparaYa - PHP_QuadCore. Todos los derechos reservados.”
 4.  **Guardar**.
+
+## Creación del _custom block_
+1. Instalar el plugin: Ir a Plugins > Añadir nuevo y buscar "Genesis Custom Blocks".
+2. Acceder a la herramienta: Una vez activado, en el menú lateral aparecerá una nueva sección llamada **Custom Blocks**
+3. Se puede crear un bloque nuevo haciendo click en “add new”.
+4. 
