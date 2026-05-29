@@ -18,7 +18,7 @@ Al acabar de desarrollar, para exportar la BBDD:
 - [x] Home
 - [x] Nuestros servicios
 - [x] Nuestra flota
-- [ ] Una sección de noticias (blog) con 3 noticias
+- [x] Una sección de noticias (blog) con 3 noticias
 - [x] Modificar los estilos de los bloques del tema en el editor de estilos del tema.
 - [x] Tener una imagen de marca coherente con el grupo.  
 - [x] Modificar los patrones de cabecera y pie de página.  
@@ -81,7 +81,7 @@ Indicar ahí las credenciales de acceso que se van a usar y el idioma con el que
 6. Elegir página en blanco y añadir bloque “contenido”.
 7. Repetir desde el punto 4, eligiendo **Página**.
 ## Decisiones de imagen
-Para ReparaYa hemos decidido proyectar una imagen amistosa y relajada. Esto lo conseguiremos con tonalidades de azul, que además traen a la mente el agua limpia.
+Se ha elegido una paleta cromática basada en tonos azulados debido a que el azul transmite confianza, profesionalidad y seguridad, valores fundamentales para una empresa de servicios de reparaciones y transfers como ReparaYa. Además, evoca la fluidez y limpieza del agua. El uso de fondos claros garantiza el contraste con los bloques de texto oscuros, cumpliendo con las normativas de accesibilidad web para una lectura cómoda.
 - Para los fondos usaremos \#bccad1
 - Para el contraste usaremos \#1e3653
 - En caso necesario, como en el texto del botón, se permitirá usar blanco y negro puro, ya que son colores que combinan correctamente y en prácticamente todas las situaciones permiten una lectura correcta.
@@ -137,3 +137,31 @@ Para crear el resto de páginas se sigue el mismo proceso desde el punto 1 al 7.
    [Ir al código](https://github.com/dvazp/PHP-QUADCORE_Producto_4/blob/main/wp-content/themes/temareparaya/blocks/block-bloque-zonas.php)
 8. Para terminar, iremos a la página `Nuestros servicios` e insertaremos un bloque nuevo, ese bloque será el que acabamos de crear.
 9. Ya que estamos en `Nuestros servicios` aprovechamos para poner la cabecera y el pie de página, un título y algún texto para complementar.
+## Sección blog
+### Paso 1: Crear una página vacía llamada "Noticias"
+1. Ir a Páginas > Añadir nueva.
+2. Ponerle de título "Blog" (o Noticias, o Actualidad).
+3. ¡IMPORTANTE! No escribir nada dentro. Dejarla completamente en blanco.
+4. Darle a Publicar.
+
+Nota: Esta página solo va a servir de "escaparate" vacío donde WordPress irá metiendo las entradas de forma automática.
+
+### Paso 2: Configurar WordPress para asignar la página de Blog
+Para indicarle a WordPress que las noticias deben mostrarse en esa página, se deben seguir estos pasos:
+1. Ir al panel de control y entrar en Ajustes > Lectura.
+2. Arriba del todo, en la sección "Tu página de inicio muestra", asegurarse de que esté marcada la opción Una página estática.
+3. Configurar los dos desplegables:
+    - Página de inicio: Elegir la página "ReparaYa" (la Home).
+    - Página de entradas: Abrir el desplegable y seleccionar la página "Noticias" (la que se acaba de crear en blanco).
+4. Bajar del todo y darle a Guardar cambios.
+### Paso 3: Crear las plantillas
+#### Plantilla de inicio del blog:
+En la sección de plantillas buscaremos el botón de añadir una nueva plantilla. Elegiremos **Inicio del blog**. A parte del _header_ y el _footer_ añadiremos un **Bucle de consulta**, que se encargará de buscar las entradas y ordenarlas para crear un índice bonito.
+#### Plantilla de entradas individuales
+De igual manera, añadiremos una nueva plantilla. En este caso elegiremos **Elemento individual: Entrada**. Hemos decidido mantener el _header_ y el _footer_; y, además, a parte del bloque de contenido, botones para acceder a la entrada anterior, a la siguiente y un mini índice en medio con las dos entradas más recientes.
+### Paso 4: Crear las 3 Noticias (Entradas)
+Para rellenar el blog y cumplir con los requisitos, se debe ir a Entradas > Añadir nueva.
+Crear 3 entradas con temática de fontanería:
+- Entrada 1: "¿Goteras en casa?”.
+- Entrada 2: "Tener cal es caro”.
+- Entrada 3: "Fugas de agua".
